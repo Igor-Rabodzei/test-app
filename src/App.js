@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import CreateTest from "./components/createTest"
+import CreateTest from "./components/createTest/createTest"
 
 class App extends Component {
   render() {

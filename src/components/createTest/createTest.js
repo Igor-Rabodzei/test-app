@@ -9,7 +9,7 @@ class CreateTest extends Component {
       answers: [
         {
           value: "",
-          id: 1
+          id: new Date().getTime()
         }
       ]
     };
@@ -17,16 +17,16 @@ class CreateTest extends Component {
   addAnswer = () => {
     const newAnswer =  {
       value: "",
-      id: (new Date()).getTime()
+      id: new Date().getTime()
     }
     const answersArr = this.state.answers
     answersArr.push(newAnswer)
     this.setState({answers: answersArr})
   }
+
   onChange = (value, id) => {
-  
    const answersArr = this.state.answers
-   const foundIndex = answersArr.findIndex(x => x.id === id);
+   const foundIndex = answersArr.findIndex(item => parseInt(item.id) === parseInt(id));
    answersArr[foundIndex].value = value;
    this.setState({ answers: answersArr })
   }
